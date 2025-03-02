@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "fireplus",
+  "version": "${version}",
+  "name": "FirePlus",
+  "description": "",
+  "authors": [
+    "DanBro"
+  ],
+  "contact": {
+    "repo": "https://github.com/PC/FirePlus"
+  },
+  "license": "All-Rights-Reserved",
+  "icon": "assets/fireplus/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "my.danbro.fireplus.client.FirePlusClient"
+    ],
+    "main": [
+      "my.danbro.fireplus.FirePlus"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
