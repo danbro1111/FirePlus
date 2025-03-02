@@ -1,7 +1,6 @@
 package my.danbro.fireplus.client;
 
 import net.fabricmc.api.ClientModInitializer;
-import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.util.math.MatrixStack;
@@ -17,16 +16,19 @@ public class FirePlusClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
-        ClientTickEvents.END_CLIENT_TICK.register(ModTickHandler::onClientTick);
-        PlaceholderReceiver.registerReceiver();
-        Keybinds.register(); // Регистрируем обработчик клавиш
+        try{
+            PlaceholderReceiver.registerReceiver();
+            Keybinds.register(); // Регистрируем обработчик клавиш
 
-        HudRenderCallback.EVENT.register((matrices, tickDelta) -> {
-            MinecraftClient client = MinecraftClient.getInstance();
-            if (client.player != null) {
-                drawFireSunText(matrices);
-            }
-        });
+            HudRenderCallback.EVENT.register((matrices, tickDelta) -> {
+                MinecraftClient client = MinecraftClient.getInstance();
+                if (client.player != null) {
+                    drawFireSunText(matrices);
+                }
+            });
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     private void drawFireSunText(MatrixStack matrices) {

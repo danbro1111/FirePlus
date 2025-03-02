@@ -12,23 +12,6 @@ public class SettingsScreen extends Screen {
 
     @Override
     protected void init() {
-//        int centerX = this.width / 2;
-//        int centerY = this.height / 2;
-//
-//        // Кнопка "Закрыть"
-//        this.addButton(new ButtonWidget(centerX - 50, centerY + 40, 100, 20, new TranslatableText("Закрыть"), button -> {
-//            this.client.openScreen(null);
-//        }));
-//        this.addButton(new ButtonWidget(
-//                this.width / 2 - 50, this.height / 2 - 10,
-//                100, 20,
-//                Text.of("Нажми меня"),
-//                button -> {
-//                    MinecraftClient.getInstance().player.sendMessage(Text.of("Ай тигр!"),false);
-//                }
-//        ));
-//
-//        // Добавь здесь больше кнопок с настройками
     }
 
     @Override

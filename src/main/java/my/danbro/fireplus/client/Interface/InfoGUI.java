@@ -1,6 +1,6 @@
 package my.danbro.fireplus.client.Interface;
 
-import my.danbro.fireplus.client.PlaceholderRequester;
+import my.danbro.fireplus.client.PlaceholderAPIHelper;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.sound.SoundEvents;
@@ -202,8 +202,7 @@ public class InfoGUI extends Screen {
         int textBoxY2 = y + 70;
         fill(matrices, x + 58, textBoxY2, x + width + 90, textBoxY2 + height, getArgb(180, 60, 60, 60));
 
-        String placeholderValue = PlaceholderRequester.sendPlaceholderRequest("%otherplayer_health_" + client.player.getName().asString()+ "%");
-        String text2 = "Уровень: "+ placeholderValue;
+        String text2 = "Уровень: " + PlaceholderAPIHelper.getStatsLevel();
         List<OrderedText> wrappedText2 = this.textRenderer.wrapLines(Text.of(text2), width + 15);
 
         int secondTextStartY = lineY2 + 35;
